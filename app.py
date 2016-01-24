@@ -2,13 +2,13 @@ from flask import Flask, render_template, redirect, url_for, request, session, f
 from functools import wraps
 from flask.ext.sqlalchemy import SQLAlchemy
 # import sqlite3
+from api_keys import *
 
 
 app = Flask(__name__)
 
-#need this for sessions to work right, 
-#def don't keep it here for the long term
-app.secret_key = "super secret"
+#need this for sessions to work right
+app.secret_key = SECRET_SESSION
 
 #this was for using straight up sqlight
 #app.database = "sample.db"
