@@ -2,7 +2,7 @@ from flask import Flask, render_template, redirect, url_for, request, session, f
 from functools import wraps
 from flask.ext.sqlalchemy import SQLAlchemy
 # import sqlite3
-from api_keys import *
+from api_keys import SECRET_SESSION
 from jellyDonut import *
 
 
@@ -23,36 +23,18 @@ db = SQLAlchemy(app)
 #only now can we import the model, bc only now the db object exists
 from models import * #by * we mean BlogPost, but whatever
 
-# login required decorator
-def login_required(f):
-    @wraps(f)
-    def wrap(*args, **kwargs): #wtf is this shit?
-        if 'logged_in' in session:
-            return f(*args, **kwargs)
-        else:
-            flash('You need to login first.')
-            return redirect(url_for('login'))
-    return wrap
-
 #route for home
 @app.route('/')
-@login_required
 def home():
-    # #use g to store temp value, flask standard
-    # g.db = connect_db()
-    # cur = g.db.execute('select * from posts')
-    # #listcomp in python- generates a list with the rows the dicts that the cur.fetchall spit out
-    # posts = [dict(title = row[0], description=row[1]) for row in cur.fetchall()]
-    # g.db.close()
-
+    return render_template ("welcome.html")
     #now, using squalchemy- fancy cause it's one line:
     posts = db.session.query(BlogPost).all()
     return render_template ("index.html", posts = posts)
 
 #route for welcome
-@app.route('/welcome')
+@app.route('/wtf')
 def welcome():
-	return render_template ("welcome.html")
+	return render_template ("wtf.html")
 
 # route for handling the login page logic
 @app.route('/login', methods=['GET', 'POST'])

@@ -9,29 +9,18 @@ from twitter import Twitter, OAuth, TwitterHTTPError, TwitterStream
 from mailgun import mailgun
 from saveTweetId import saveTweetId
 from readTweetId import readTweetId
-
-#todo:
-    #add email addresses to database? dictionary?
-    #match the list of emails to a keyword or DB entry or something
-    #be able to add an email to this list
-    #be able to add a keyword to this dictionary/DB
-    #be able to remove email address
-    #get a better/bigger soln than mailgun?
-    #django website?
-
-
-
+from api_keys import ACCESS_TOKEN, ACCESS_TOKEN_SECRET, CONSUMER_KEY, CONSUMER_SECRET, MAILGUN_KEY
 
 #open a file called "apikeys" with keys and tokens for Twitter separated by newlines,
 # strip the invisible newline char from it
-with open('apikeys.txt', 'r') as keyFile:
-    keyFile = open('apikeys.txt', 'r')
-    ACCESS_TOKEN = keyFile.readline().rstrip()
-    ACCESS_TOKEN_SECRET = keyFile.readline().rstrip()
-    CONSUMER_KEY = keyFile.readline().rstrip()
-    CONSUMER_SECRET = keyFile.readline().rstrip()
-    MAILGUN_KEY = keyFile.readline().rstrip()
-keyFile.closed
+# with open('apikeys.txt', 'r') as keyFile:
+#     keyFile = open('apikeys.txt', 'r')
+#     ACCESS_TOKEN = keyFile.readline().rstrip()
+#     ACCESS_TOKEN_SECRET = keyFile.readline().rstrip()
+#     CONSUMER_KEY = keyFile.readline().rstrip()
+#     CONSUMER_SECRET = keyFile.readline().rstrip()
+#     MAILGUN_KEY = keyFile.readline().rstrip()
+# keyFile.closed
 
 oauth = OAuth(ACCESS_TOKEN, ACCESS_TOKEN_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
 
