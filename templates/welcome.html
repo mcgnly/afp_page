@@ -7,7 +7,34 @@
  <h1>AFP Alert</h2>
 
  	<p>Enter your email here:</p>
- 	<p>Pick your city here:</p>
+
+
+      <!-- email input box -->
+    <form>
+      <div class="form-group">
+        <textarea class="form-control status-box" rows="1" placeholder="name@something.com"></textarea>
+      </div>
+    </form>
+
+      <!-- button to append the name and score to the list -->
+    <div class="button-group">
+      <a href="#" class="btn btn-primary">save</a>
+    </div>
+
+
+ 	<!-- <p>Pick your city here:</p> -->
+	<div class="dropdown">
+		<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+		Pick your city here:
+		<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+		<li><a href="#">city 1</a></li>
+		<li><a href="#">city 2</a></li>
+		<li><a href="#">city 3</a></li>
+		</ul>
+	</div>
+
  	<p>Add your city to the list here:</p>
 
     <br>
