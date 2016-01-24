@@ -36,6 +36,7 @@ def home():
 def welcome():
 	return render_template ("wtf.html")
 
+
 #start the server with 'run()' method
 if __name__ == '__main__':
 	app.run(debug=True)
