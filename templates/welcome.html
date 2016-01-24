@@ -4,11 +4,16 @@
 {% extends "base.html" %}
 {% block content %}
 
- <h1>AFP Alert</h2>
+<div  class="text-center">
+	  <div class="jumbotron">
+      	<div class="container">
+        	<h1>AFP Alert</h1>
+      	</div>
+      </div>
+</div>
 
- 	<p>Enter your email here:</p>
-
-
+<div class = "email-input">
+ 	<h3>Enter your email here:</h3>
       <!-- email input box -->
     <form>
       <div class="form-group">
@@ -20,8 +25,9 @@
     <div class="button-group">
       <a href="#" class="btn btn-primary">save</a>
     </div>
+</div>
 
-
+<div class="city-input">
  	<!-- <p>Pick your city here:</p> -->
 	<div class="dropdown">
 		<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -36,6 +42,9 @@
 	</div>
 
  	<p>Add your city to the list here:</p>
+
+</div>
+
 
     <br>
     <p><a href="/wtf">What is this all about??</a></p>
