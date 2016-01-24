@@ -1,7 +1,8 @@
-from flask import Flask, render_template, redirect, url_for, request, session, flash, g
+from flask import Flask, render_template, redirect, url_for, request, session, flash #g, commented out bc no more sqlight
 from functools import wraps
 from flask.ext.sqlalchemy import SQLAlchemy
 # import sqlite3
+
 
 app = Flask(__name__)
 
